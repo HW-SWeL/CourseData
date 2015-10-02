@@ -546,8 +546,7 @@
 
 <http://purl.org/net/mlo/LearningOpportunityInstance> rdf:type owl:Class ;
                                                       
-                                                      rdfs:label "A single occurrence of a Course.  Unlike a Course Specification, a Course Instance is not abstract, it may be bound to particular dates or locations and may by participated in by learners" ,
-                                                                 "Learning Opportunity Instance" ;
+                                                      rdfs:label "Learning Opportunity Instance" ;
                                                       
                                                       rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Learning_Opportunity_Indirection> ;
                                                       
