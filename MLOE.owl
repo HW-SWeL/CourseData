@@ -1,0 +1,903 @@
+@prefix : <http://www.semanticweb.org/owl/owlapi/turtle#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.w3.org/2002/07/owl#> .
+
+
+
+#################################################################
+#
+#    Annotation properties
+#
+#################################################################
+
+
+###  http://purl.org/dc/elements/1.1/date
+
+<http://purl.org/dc/elements/1.1/date> rdf:type owl:AnnotationProperty .
+
+
+
+###  http://purl.org/dc/elements/1.1/language
+
+<http://purl.org/dc/elements/1.1/language> rdf:type owl:AnnotationProperty .
+
+
+
+###  http://purl.org/dc/elements/1.1/relation
+
+<http://purl.org/dc/elements/1.1/relation> rdf:type owl:AnnotationProperty .
+
+
+
+###  http://purl.org/net/mlo/hasPart
+
+<http://purl.org/net/mlo/hasPart> rdf:type owl:AnnotationProperty ;
+                                  
+                                  rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/relation> .
+
+
+
+###  http://purl.org/net/mlo/languageOfInstruction
+
+<http://purl.org/net/mlo/languageOfInstruction> rdf:type owl:AnnotationProperty ;
+                                                
+                                                rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/language> ;
+                                                
+                                                rdfs:domain rdfs:Resource .
+
+
+
+###  http://purl.org/net/mlo/offeredAt
+
+<http://purl.org/net/mlo/offeredAt> rdf:type owl:AnnotationProperty ;
+                                    
+                                    rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/relation> .
+
+
+
+###  http://purl.org/net/mlo/offers
+
+<http://purl.org/net/mlo/offers> rdf:type owl:AnnotationProperty ;
+                                 
+                                 rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/relation> .
+
+
+
+###  http://purl.org/net/mlo/specifies
+
+<http://purl.org/net/mlo/specifies> rdf:type owl:AnnotationProperty ;
+                                    
+                                    rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/relation> .
+
+
+
+###  http://purl.org/net/mlo/start
+
+<http://purl.org/net/mlo/start> rdf:type owl:AnnotationProperty ;
+                                
+                                rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/date> ;
+                                
+                                rdfs:domain rdfs:Resource .
+
+
+
+
+
+#################################################################
+#
+#    Object Properties
+#
+#################################################################
+
+
+###  http://purl.org/net/mlo/assessment
+
+<http://purl.org/net/mlo/assessment> rdf:type owl:ObjectProperty ;
+                                     
+                                     rdfs:label "assessment" ;
+                                     
+                                     rdfs:comment "Assessment strategy: a description of the broad approach to assessment used in the Learning Opportunity." ;
+                                     
+                                     rdfs:isDefinedBy <http://svn.cetis.ac.uk/xcri/trunk/bindings/rdf/mlo_rdfs.xml> ;
+                                     
+                                     rdfs:range rdfs:Resource ;
+                                     
+                                     rdfs:domain rdfs:Resource .
+
+
+
+###  http://purl.org/net/mlo/credit
+
+<http://purl.org/net/mlo/credit> rdf:type owl:ObjectProperty ;
+                                 
+                                 rdfs:label "credit" ;
+                                 
+                                 rdfs:comment "An account of the credits according to a specified system that can be obtained from completion of a Learning Opportunity" ;
+                                 
+                                 rdfs:isDefinedBy <http://svn.cetis.ac.uk/xcri/trunk/bindings/rdf/mlo_rdfs.xml> ;
+                                 
+                                 rdfs:range rdfs:Resource ;
+                                 
+                                 rdfs:domain rdfs:Resource .
+
+
+
+###  http://purl.org/net/mlo/hasPart
+
+<http://purl.org/net/mlo/hasPart> rdf:type owl:ObjectProperty ;
+                                  
+                                  rdfs:range rdfs:Resource ;
+                                  
+                                  rdfs:domain rdfs:Resource .
+
+
+
+###  http://purl.org/net/mlo/location
+
+<http://purl.org/net/mlo/location> rdf:type owl:ObjectProperty ;
+                                   
+                                   rdfs:label "location" ;
+                                   
+                                   rdfs:comment "The spatial location of the Learning Opportunity Provider or Learning Opportunity." ;
+                                   
+                                   rdfs:isDefinedBy <http://svn.cetis.ac.uk/xcri/trunk/bindings/rdf/mlo_rdfs.xml> ;
+                                   
+                                   rdfs:domain rdfs:Resource ;
+                                   
+                                   rdfs:range rdfs:Resource .
+
+
+
+###  http://purl.org/net/mlo/objective
+
+<http://purl.org/net/mlo/objective> rdf:type owl:ObjectProperty ;
+                                    
+                                    rdfs:label "objective" ;
+                                    
+                                    rdfs:comment "An aim or learning objective for the Learning Opportunity." ;
+                                    
+                                    rdfs:isDefinedBy <http://svn.cetis.ac.uk/xcri/trunk/bindings/rdf/mlo_rdfs.xml> ;
+                                    
+                                    rdfs:domain rdfs:Resource ;
+                                    
+                                    rdfs:range rdfs:Resource .
+
+
+
+###  http://purl.org/net/mlo/offeredAt
+
+<http://purl.org/net/mlo/offeredAt> rdf:type owl:ObjectProperty ;
+                                    
+                                    rdfs:range <http://purl.org/net/mlo/LearningOpportunityProvider> ;
+                                    
+                                    rdfs:domain rdfs:Resource .
+
+
+
+###  http://purl.org/net/mlo/offers
+
+<http://purl.org/net/mlo/offers> rdf:type owl:ObjectProperty ;
+                                 
+                                 rdfs:domain <http://purl.org/net/mlo/LearningOpportunityProvider> ;
+                                 
+                                 rdfs:range <http://purl.org/net/mlo/LearningOpportunitySpecification> .
+
+
+
+###  http://purl.org/net/mlo/places
+
+<http://purl.org/net/mlo/places> rdf:type owl:ObjectProperty ;
+                                 
+                                 rdfs:label "places" ;
+                                 
+                                 rdfs:comment "Number of places available for participants in the Learning Opportunity." ;
+                                 
+                                 rdfs:isDefinedBy <http://svn.cetis.ac.uk/xcri/trunk/bindings/rdf/mlo_rdfs.xml> ;
+                                 
+                                 rdfs:range rdfs:Resource ;
+                                 
+                                 rdfs:domain rdfs:Resource .
+
+
+
+###  http://purl.org/net/mlo/prerequisite
+
+<http://purl.org/net/mlo/prerequisite> rdf:type owl:ObjectProperty ;
+                                       
+                                       rdfs:label "prerequisite" ;
+                                       
+                                       rdfs:comment "A prerequisite or entry requirement for accessing the Learning Opportunity." ;
+                                       
+                                       rdfs:isDefinedBy <http://svn.cetis.ac.uk/xcri/trunk/bindings/rdf/mlo_rdfs.xml> ;
+                                       
+                                       rdfs:range rdfs:Resource ;
+                                       
+                                       rdfs:domain rdfs:Resource .
+
+
+
+###  http://purl.org/net/mlo/qualification
+
+<http://purl.org/net/mlo/qualification> rdf:type owl:ObjectProperty ;
+                                        
+                                        rdfs:label "qualification" ;
+                                        
+                                        rdfs:comment "Status awarded to or conferred on a learner" ;
+                                        
+                                        rdfs:isDefinedBy <http://svn.cetis.ac.uk/xcri/trunk/bindings/rdf/mlo_rdfs.xml> ;
+                                        
+                                        rdfs:range rdfs:Resource ;
+                                        
+                                        rdfs:domain rdfs:Resource .
+
+
+
+###  http://purl.org/net/mlo/specifies
+
+<http://purl.org/net/mlo/specifies> rdf:type owl:ObjectProperty ;
+                                    
+                                    rdfs:range <http://purl.org/net/mlo/LearningOpportunityInstance> ;
+                                    
+                                    rdfs:domain <http://purl.org/net/mlo/LearningOpportunitySpecification> .
+
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#courseCoordinator
+
+<http://www.co-ode.org/ontologies/ont.owl#courseCoordinator> rdf:type owl:ObjectProperty ;
+                                                             
+                                                             rdfs:label "course co-ordinator" ;
+                                                             
+                                                             rdfs:comment "relation to the person who is repsonsible fore the delivery of a learning opportunity" .
+
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#exit_qualification
+
+<http://www.co-ode.org/ontologies/ont.owl#exit_qualification> rdf:type owl:ObjectProperty ;
+                                                              
+                                                              rdfs:label "exit qualification" ;
+                                                              
+                                                              rdfs:comment "Any qualification awarded at graduation i.e. Bsc Honours, BSc Ordinary" ;
+                                                              
+                                                              rdfs:subPropertyOf <http://purl.org/net/mlo/qualification> .
+
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#hasAssessmentMethod
+
+<http://www.co-ode.org/ontologies/ont.owl#hasAssessmentMethod> rdf:type owl:ObjectProperty ;
+                                                               
+                                                               rdfs:label "has Assessment Method" .
+
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#hasCourseYear
+
+<http://www.co-ode.org/ontologies/ont.owl#hasCourseYear> rdf:type owl:ObjectProperty ;
+                                                         
+                                                         rdfs:label "has course year" ;
+                                                         
+                                                         rdfs:comment "the relation from a course specification to the version of a course given in a particular year" .
+
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#hasInstructor
+
+<http://www.co-ode.org/ontologies/ont.owl#hasInstructor> rdf:type owl:ObjectProperty ;
+                                                         
+                                                         rdfs:label "has instructor" ;
+                                                         
+                                                         rdfs:comment "relates a Course Instance to its instructor.  An instructor is the lecuturer or tutor who delivers all or part of a learning opportunity." .
+
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#hasLearningOutcome
+
+<http://www.co-ode.org/ontologies/ont.owl#hasLearningOutcome> rdf:type owl:ObjectProperty ;
+                                                              
+                                                              rdfs:label "has learning outcome" ;
+                                                              
+                                                              rdfs:comment "A relation to the learning outcomes of a learning opportunity" .
+
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#hasSyllabus
+
+<http://www.co-ode.org/ontologies/ont.owl#hasSyllabus> rdf:type owl:ObjectProperty ;
+                                                       
+                                                       rdfs:label "has syllabus" ;
+                                                       
+                                                       rdfs:comment "Relates a learning opportunity to its syllabus" .
+
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#has_standard_code
+
+<http://www.co-ode.org/ontologies/ont.owl#has_standard_code> rdf:type owl:ObjectProperty ;
+                                                             
+                                                             rdfs:label "relates learning opportunity to standard code given to the learning opportunity" .
+
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#inSemester
+
+<http://www.co-ode.org/ontologies/ont.owl#inSemester> rdf:type owl:ObjectProperty ;
+                                                      
+                                                      rdfs:label "in semester" ;
+                                                      
+                                                      rdfs:comment "relation between the learning opportunity and the semester in which it is taught" ;
+                                                      
+                                                      rdfs:subPropertyOf owl:topObjectProperty .
+
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#in_code_scheme
+
+<http://www.co-ode.org/ontologies/ont.owl#in_code_scheme> rdf:type owl:ObjectProperty ;
+                                                          
+                                                          rdfs:label "in code scheme" ;
+                                                          
+                                                          rdfs:comment "the Code scheme to which a Standard Code belongs" .
+
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#isAccreditedBy
+
+<http://www.co-ode.org/ontologies/ont.owl#isAccreditedBy> rdf:type owl:ObjectProperty ;
+                                                          
+                                                          rdfs:label "is accredited by" ;
+                                                          
+                                                          rdfs:comment "relation to the Organization which accredits a Learning Opportunity" .
+
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#mainQualification
+
+<http://www.co-ode.org/ontologies/ont.owl#mainQualification> rdf:type owl:ObjectProperty ;
+                                                             
+                                                             rdfs:label "main qualification" ;
+                                                             
+                                                             rdfs:comment "The main award that is used to advertise the learning opportunity and to which the students are ususally recruited to." ;
+                                                             
+                                                             rdfs:subPropertyOf <http://purl.org/net/mlo/qualification> .
+
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#synoptic
+
+<http://www.co-ode.org/ontologies/ont.owl#synoptic> rdf:type owl:ObjectProperty ;
+                                                    
+                                                    rdfs:label "synoptic" ;
+                                                    
+                                                    rdfs:comment "the relationship between two learning opportunities that must be completed by a learner in conjunction" .
+
+
+
+
+
+#################################################################
+#
+#    Data properties
+#
+#################################################################
+
+
+###  http://purl.org/net/mlo/cost
+
+<http://purl.org/net/mlo/cost> rdf:type owl:DatatypeProperty ;
+                               
+                               rdfs:label "cost" ;
+                               
+                               rdfs:comment "A cost associated with obtaining access to the Learning Opportunity." ;
+                               
+                               rdfs:isDefinedBy <http://svn.cetis.ac.uk/xcri/trunk/bindings/rdf/mlo_rdfs.xml> ;
+                               
+                               rdfs:range rdfs:Literal ;
+                               
+                               rdfs:domain rdfs:Resource .
+
+
+
+###  http://purl.org/net/mlo/duration
+
+<http://purl.org/net/mlo/duration> rdf:type owl:DatatypeProperty ;
+                                   
+                                   rdfs:label "duration" ;
+                                   
+                                   rdfs:comment "A duration of the Learning Opportunity." ;
+                                   
+                                   rdfs:isDefinedBy <http://svn.cetis.ac.uk/xcri/trunk/bindings/rdf/mlo_rdfs.xml> ;
+                                   
+                                   rdfs:range rdfs:Literal ;
+                                   
+                                   rdfs:domain rdfs:Resource .
+
+
+
+###  http://purl.org/net/mlo/engagement
+
+<http://purl.org/net/mlo/engagement> rdf:type owl:DatatypeProperty ;
+                                     
+                                     rdfs:label "engagement" ;
+                                     
+                                     rdfs:comment "The logistical means by which individuals engage in a Learning Opportunity, encompassing temporal, modal and spatial patterns of engagement and attendance." ;
+                                     
+                                     rdfs:isDefinedBy <http://svn.cetis.ac.uk/xcri/trunk/bindings/rdf/mlo_rdfs.xml> ;
+                                     
+                                     rdfs:range rdfs:Literal ;
+                                     
+                                     rdfs:domain rdfs:Resource .
+
+
+
+###  http://purl.org/net/mlo/languageOfInstruction
+
+<http://purl.org/net/mlo/languageOfInstruction> rdf:type owl:DatatypeProperty ;
+                                                
+                                                rdfs:range rdfs:Literal .
+
+
+
+###  http://purl.org/net/mlo/level
+
+<http://purl.org/net/mlo/level> rdf:type owl:DatatypeProperty ;
+                                
+                                rdfs:label "level" ;
+                                
+                                rdfs:comment "An account of the education level of the Learning Opportunity." ;
+                                
+                                rdfs:isDefinedBy <http://svn.cetis.ac.uk/xcri/trunk/bindings/rdf/mlo_rdfs.xml> ;
+                                
+                                rdfs:range rdfs:Literal ;
+                                
+                                rdfs:domain rdfs:Resource .
+
+
+
+###  http://purl.org/net/mlo/start
+
+<http://purl.org/net/mlo/start> rdf:type owl:DatatypeProperty ;
+                                
+                                rdfs:range rdfs:Literal .
+
+
+
+###  http://purl.org/net/mlo/url
+
+<http://purl.org/net/mlo/url> rdf:type owl:DatatypeProperty ;
+                              
+                              rdfs:label "url" ;
+                              
+                              rdfs:comment "A link to a web resource that provides an alternate representation of the resource. The content should conform to a URI IETF-RFC2396." ;
+                              
+                              rdfs:isDefinedBy <http://svn.cetis.ac.uk/xcri/trunk/bindings/rdf/mlo_rdfs.xml> ;
+                              
+                              rdfs:range rdfs:Literal ;
+                              
+                              rdfs:domain rdfs:Resource .
+
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#dateOfApproval
+
+<http://www.co-ode.org/ontologies/ont.owl#dateOfApproval> rdf:type owl:DatatypeProperty ;
+                                                          
+                                                          rdfs:label "has Date Of Approval" ;
+                                                          
+                                                          rdfs:comment "The date a Learning Opportunity is approved" .
+
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#dateOfImplementation
+
+<http://www.co-ode.org/ontologies/ont.owl#dateOfImplementation> rdf:type owl:DatatypeProperty ;
+                                                                
+                                                                rdfs:label "has Date Of Implementation" ;
+                                                                
+                                                                rdfs:comment "The date on which a Learning Opportunity will be implemented" .
+
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#dateOfProposal
+
+<http://www.co-ode.org/ontologies/ont.owl#dateOfProposal> rdf:type owl:DatatypeProperty ;
+                                                          
+                                                          rdfs:label "has Date Of Proposal" ;
+                                                          
+                                                          rdfs:comment "The date on which a Learning Opportunity is proposed" .
+
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#hasDuration
+
+<http://www.co-ode.org/ontologies/ont.owl#hasDuration> rdf:type owl:DatatypeProperty ;
+                                                       
+                                                       rdfs:label "has duration" ;
+                                                       
+                                                       rdfs:comment "The duration of an Exam" .
+
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#hasWeighting
+
+<http://www.co-ode.org/ontologies/ont.owl#hasWeighting> rdf:type owl:DatatypeProperty ;
+                                                        
+                                                        rdfs:label "has weighting" ;
+                                                        
+                                                        rdfs:comment "The percentage weighting of the assessment" .
+
+
+
+
+
+#################################################################
+#
+#    Classes
+#
+#################################################################
+
+
+###  http://purl.org/net/mlo/LearningOpportunityInstance
+
+<http://purl.org/net/mlo/LearningOpportunityInstance> rdf:type owl:Class ;
+                                                      
+                                                      rdfs:label "A single occurrence of a Course.  Unlike a Course Specification, a Course Instance is not abstract, it may be bound to particular dates or locations and may by participated in by learners" ,
+                                                                 "Learning Opportunity Instance" ;
+                                                      
+                                                      rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Learning_Opportunity_Indirection> ;
+                                                      
+                                                      rdfs:comment "A single occurrence of a learning opportunity. Unlike a Learning Opportunity Specification, a Learning Opportunity Instance is not abstract, may be bound to particular dates or locations, and may be applied for or participated in by learners." ;
+                                                      
+                                                      rdfs:isDefinedBy <http://svn.cetis.ac.uk/xcri/trunk/bindings/rdf/mlo_rdfs.xml> .
+
+
+
+###  http://purl.org/net/mlo/LearningOpportunityProvider
+
+<http://purl.org/net/mlo/LearningOpportunityProvider> rdf:type owl:Class ;
+                                                      
+                                                      rdfs:label "Learning Opportunity Provider" ;
+                                                      
+                                                      rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Learning_Opportunity_Object> ;
+                                                      
+                                                      rdfs:comment "An agent (person or organisation) that provides learning opportunities." ;
+                                                      
+                                                      rdfs:isDefinedBy <http://svn.cetis.ac.uk/xcri/trunk/bindings/rdf/mlo_rdfs.xml> .
+
+
+
+###  http://purl.org/net/mlo/LearningOpportunitySpecification
+
+<http://purl.org/net/mlo/LearningOpportunitySpecification> rdf:type owl:Class ;
+                                                           
+                                                           rdfs:label "Learning Opportunity Specification" ;
+                                                           
+                                                           rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Learning_Opportunity_Indirection> ;
+                                                           
+                                                           rdfs:comment "An abstract description of a learning opportunity, consisting of information that will be consistent across multiple instances of the learning opportunity." ;
+                                                           
+                                                           rdfs:isDefinedBy <http://svn.cetis.ac.uk/xcri/trunk/bindings/rdf/mlo_rdfs.xml> .
+
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Assessment
+
+<http://www.co-ode.org/ontologies/ont.owl#Assessment> rdf:type owl:Class ;
+                                                      
+                                                      rdfs:label "Assessment" ;
+                                                      
+                                                      rdfs:comment "Assessment strategy: a description of the broad approach to assessment used in the Learning Opportunity." .
+
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Assessment_Method
+
+<http://www.co-ode.org/ontologies/ont.owl#Assessment_Method> rdf:type owl:Class ;
+                                                             
+                                                             rdfs:label "Assessment Method" ;
+                                                             
+                                                             rdfs:comment "The method used to assess the achievement of the learning outcomes of a Learning Opportunity" .
+
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Code_Scheme
+
+<http://www.co-ode.org/ontologies/ont.owl#Code_Scheme> rdf:type owl:Class ;
+                                                       
+                                                       rdfs:label "Code Scheme" ;
+                                                       
+                                                       rdfs:comment "The scheme which a Standard Code belongs to" .
+
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#CourseInstance
+
+<http://www.co-ode.org/ontologies/ont.owl#CourseInstance> rdf:type owl:Class ;
+                                                          
+                                                          rdfs:label "Course Instance" ;
+                                                          
+                                                          rdfs:subClassOf <http://purl.org/net/mlo/LearningOpportunityInstance> ;
+                                                          
+                                                          rdfs:comment "A single occurrence of a Course.  Unlike a Course Specification, a Course Instance is not abstract, it may be bound to particular dates or locations and may by participated in by learners" .
+
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#CourseSpecification
+
+<http://www.co-ode.org/ontologies/ont.owl#CourseSpecification> rdf:type owl:Class ;
+                                                               
+                                                               rdfs:label "Course Specification" ;
+                                                               
+                                                               rdfs:subClassOf <http://purl.org/net/mlo/LearningOpportunitySpecification> ;
+                                                               
+                                                               rdfs:comment "an abstract description of a course where a course is one module of a programme" ,
+                                                                            "an abstract description of a programme where a programme consists of many courses" .
+
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Coursework
+
+<http://www.co-ode.org/ontologies/ont.owl#Coursework> rdf:type owl:Class ;
+                                                      
+                                                      rdfs:label "Coursework" ,
+                                                                 "The assessment method of a Learning Opportunity, includes any type of coursework such as essays, lab work, presentations etc." ;
+                                                      
+                                                      rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Assessment_Method> ;
+                                                      
+                                                      rdfs:comment "Exam used as assessment method for a learning opportunity" .
+
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Exam
+
+<http://www.co-ode.org/ontologies/ont.owl#Exam> rdf:type owl:Class ;
+                                                
+                                                rdfs:label "Exam" ;
+                                                
+                                                rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Assessment_Method> .
+
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Exam_Period
+
+<http://www.co-ode.org/ontologies/ont.owl#Exam_Period> rdf:type owl:Class ;
+                                                       
+                                                       rdfs:label "Exam Period" ;
+                                                       
+                                                       rdfs:comment "The exam session/period within which the exam is held." .
+
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Learning_Opportunity_Indirection
+
+<http://www.co-ode.org/ontologies/ont.owl#Learning_Opportunity_Indirection> rdf:type owl:Class ;
+                                                                            
+                                                                            rdfs:label "Learning Opportunity Indirection" ;
+                                                                            
+                                                                            rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Learning_Opportunity_Object> ;
+                                                                            
+                                                                            rdfs:comment "An abstract resource used in the context of learning opportunites which encompasses Learning Oportunity Specification and Learning Opportunity Instance but excludes Learning Opoprtnity Provider." .
+
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Learning_Opportunity_Object
+
+<http://www.co-ode.org/ontologies/ont.owl#Learning_Opportunity_Object> rdf:type owl:Class ;
+                                                                       
+                                                                       rdfs:label "Learning Opportunity Object" ;
+                                                                       
+                                                                       rdfs:comment "An abstract resource used within the context of learning opportunities" .
+
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Learning_Opportunity_Stage_Specification
+
+<http://www.co-ode.org/ontologies/ont.owl#Learning_Opportunity_Stage_Specification> rdf:type owl:Class ;
+                                                                                    
+                                                                                    rdfs:label "Learning Opportunity Stage Specification" ;
+                                                                                    
+                                                                                    rdfs:comment "An abstract description of one stage of a learning opportunity, for instance one year of a four year programme" .
+
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Learning_Outcome
+
+<http://www.co-ode.org/ontologies/ont.owl#Learning_Outcome> rdf:type owl:Class ;
+                                                            
+                                                            rdfs:label "Learning Outcome" ;
+                                                            
+                                                            rdfs:comment "The learning outcomes for a learning opportunity" .
+
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Objective
+
+<http://www.co-ode.org/ontologies/ont.owl#Objective> rdf:type owl:Class ;
+                                                     
+                                                     rdfs:label "Objective" ;
+                                                     
+                                                     rdfs:comment "An aim or learning objective for the Learning Opportunity." .
+
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Personal_Ability_Learning_Outcome
+
+<http://www.co-ode.org/ontologies/ont.owl#Personal_Ability_Learning_Outcome> rdf:type owl:Class ;
+                                                                             
+                                                                             rdfs:label "Personal Ability Learning Outcome" ;
+                                                                             
+                                                                             rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Learning_Outcome> .
+
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#ProgrammeInstance
+
+<http://www.co-ode.org/ontologies/ont.owl#ProgrammeInstance> rdf:type owl:Class ;
+                                                             
+                                                             rdfs:label "Programme Instance" ;
+                                                             
+                                                             rdfs:subClassOf <http://purl.org/net/mlo/LearningOpportunityInstance> ;
+                                                             
+                                                             rdfs:comment "A single occurrence of a Programme.  Unlike a Programme Specification, a Programme Instance is not abstract, it may be bound to particular dates or locations and may by participated in by learners" .
+
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#ProgrammeSpecification
+
+<http://www.co-ode.org/ontologies/ont.owl#ProgrammeSpecification> rdf:type owl:Class ;
+                                                                  
+                                                                  rdfs:label "Programme Specification" ;
+                                                                  
+                                                                  rdfs:subClassOf <http://purl.org/net/mlo/LearningOpportunitySpecification> .
+
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Qualification
+
+<http://www.co-ode.org/ontologies/ont.owl#Qualification> rdf:type owl:Class ;
+                                                         
+                                                         rdfs:label "Qualification" ;
+                                                         
+                                                         rdfs:comment "The qualification awarded to a learner on successful completion of a learning opportunity" .
+
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Semester
+
+<http://www.co-ode.org/ontologies/ont.owl#Semester> rdf:type owl:Class ;
+                                                    
+                                                    rdfs:label "Semester" ;
+                                                    
+                                                    rdfs:comment "The semester or academic term in which a learning opportunity is delivered" .
+
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Standard_Code
+
+<http://www.co-ode.org/ontologies/ont.owl#Standard_Code> rdf:type owl:Class ;
+                                                         
+                                                         rdfs:label "Standard Code" ;
+                                                         
+                                                         rdfs:comment "Code that classifies a learning opportunity by subject, usually a national or international standard" .
+
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Subject_Mastery_Learning_Outcome
+
+<http://www.co-ode.org/ontologies/ont.owl#Subject_Mastery_Learning_Outcome> rdf:type owl:Class ;
+                                                                            
+                                                                            rdfs:label "Subject Mastery Learning Outcome" ;
+                                                                            
+                                                                            rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Learning_Outcome> ;
+                                                                            
+                                                                            rdfs:comment "Learning Outcomes of a Learning Opportunity which include transferable skills such as communication and working with others." ,
+                                                                                         "Learning Outcomes of a learning opportunity which include understanding, knowledge and cognitive skills" .
+
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Syllabus
+
+<http://www.co-ode.org/ontologies/ont.owl#Syllabus> rdf:type owl:Class ;
+                                                    
+                                                    rdfs:label "Syllabus" ;
+                                                    
+                                                    rdfs:comment "The subjects covered in the syllabus of the learning opportunity," .
+
+
+
+###  http://www.w3.org/2000/01/rdf-schema#Resource
+
+rdfs:Resource rdf:type owl:Class .
+
+
+
+
+
+#################################################################
+#
+#    Individuals
+#
+#################################################################
+
+
+###  http://purl.org/dc/terms/hasPart
+
+<http://purl.org/dc/terms/hasPart> rdf:type owl:NamedIndividual ;
+                                   
+                                   owl:sameAs <http://purl.org/net/mlo/hasPart> .
+
+
+
+###  http://purl.org/net/mlo/hasPart
+
+<http://purl.org/net/mlo/hasPart> rdf:type owl:NamedIndividual .
+
+
+
+
+
+#################################################################
+#
+#    Annotations
+#
+#################################################################
+
+
+<http://purl.org/net/mlo/offeredAt> rdfs:label "Offered At" ;
+                                    
+                                    rdfs:comment "A relation to a Learning Opportunity Provider that offers the Learning Opportunity Instance." ;
+                                    
+                                    rdfs:isDefinedBy <http://svn.cetis.ac.uk/xcri/trunk/bindings/rdf/mlo_rdfs.xml> .
+
+
+
+<http://purl.org/net/mlo/start> rdfs:label "start" ;
+                                
+                                rdfs:comment "A date from which the Learning Opportunity commences." ;
+                                
+                                rdfs:isDefinedBy <http://svn.cetis.ac.uk/xcri/trunk/bindings/rdf/mlo_rdfs.xml> .
+
+
+
+<http://purl.org/net/mlo/languageOfInstruction> rdfs:label "language of instruction" ;
+                                                
+                                                rdfs:comment "A language in which the Learning Opportunity is available to be taught." ;
+                                                
+                                                rdfs:isDefinedBy <http://svn.cetis.ac.uk/xcri/trunk/bindings/rdf/mlo_rdfs.xml> .
+
+
+
+<http://purl.org/net/mlo/hasPart> rdfs:label "Has Part" ;
+                                  
+                                  rdfs:comment "A relation from an Assessment to an Assessment Method" ,
+                                               "A relation to a resource that is logically included in the described resource." ;
+                                  
+                                  rdfs:isDefinedBy <http://svn.cetis.ac.uk/xcri/trunk/bindings/rdf/mlo_rdfs.xml> .
+
+
+
+<http://purl.org/net/mlo/specifies> rdfs:label "Specifies" ;
+                                    
+                                    rdfs:comment "A relation to a Learning Opportunity Instance that is an instance specified by the Learning Opportunity Specification." ;
+                                    
+                                    rdfs:isDefinedBy <http://svn.cetis.ac.uk/xcri/trunk/bindings/rdf/mlo_rdfs.xml> .
+
+
+
+<http://purl.org/net/mlo/offers> rdfs:label "Offers" ;
+                                 
+                                 rdfs:comment "A relation to a Learning Opportunity Specification offered by the Learning Opportunity Provider." ,
+                                              "A relation to a Subject that is part of the syllabus of a Learning Opportunity" ;
+                                 
+                                 rdfs:isDefinedBy <http://svn.cetis.ac.uk/xcri/trunk/bindings/rdf/mlo_rdfs.xml> .
+
+
+
+
+###  Generated by the OWL API (version 3.5.1) http://owlapi.sourceforge.net
+
